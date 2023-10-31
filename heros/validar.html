@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <script>
+        var nome = prompt("Diga um nome", "Carine")
+        var sobreNome = prompt("Diga um sobrenome", "Falchetti")
+        var nomeCompleto = nome + " " + sobreNome
+        var tamanhoDoNome = nomeCompleto.length
+        var txt = nomeCompleto + " \n tem tamanho de " + tamanhoDoNome
+        imprimir(txt)
+
+        var resposta = confirm(nomeCompleto + "Nome está certo?")
+
+        if(resposta == true){
+            imprimir(txt)
+        }else{
+            imprimir("deu ruim")
+        }
+
+        function imprimir(texto){
+            console.log(texto)
+            alert(texto)
+            document.write(texto)
+        }
+
+        function trabalhandoNúmeros() {
+                var n1 = prompt("diga um número", 10.3)
+                var n2 = 5
+                var total = parseInt(n1) + n2
+                imprimir(total)
+            }
+
+            trabalhandoNúmeros()
+            imprimir("a" == "A")
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1>Validar</h1>
+        <form>
+            <fieldset align="center" style="width:270px"> 
+                <legend>Login:</legend>
+                Email: <input id="idEmail" type="text" onblur="maiuscula();"><br>
+                Senha: <input id="idSenha" type="password"><br> 
+                <input type="button" value="Enviar" onclick="validar();"> 
+            </fieldset> 
+        </form> 
+    </center> 
+
+    
+</body>
+
+</html>
