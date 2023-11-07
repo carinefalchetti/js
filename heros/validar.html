@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <script src="js/myscript.js" type="text/javascript"></script>
     <script>
         var nome = prompt("Diga um nome", "Carine")
         var sobreNome = prompt("Diga um sobrenome", "Falchetti")
@@ -9,7 +10,7 @@
         var txt = nomeCompleto + " \n tem tamanho de " + tamanhoDoNome
         imprimir(txt)
 
-        var resposta = confirm(nomeCompleto + "Nome está certo?")
+        var resposta = confirm(nomeCompleto + " ,essse nome está certo?")
 
         if(resposta == true){
             imprimir(txt)
@@ -32,18 +33,46 @@
 
             trabalhandoNúmeros()
             imprimir("a" == "A")
+
+        function maiuscula(){
+                var email = gebi("idEmail").value
+                var emailMaiusculas = email.toUpperCase()
+                gebi("idEmail").value = emailMaiusculas
+            }
+
+
+        function validar(){
+				var email = gebi("idEmail").value; 
+				var senha = gebi("idSenha").value;
+			
+
+            if(email.length < 1){
+                alert("Preencha o e-mail")
+                return
+            }
+
+            if(email.length < 1){
+                alert("Preencha a senha")
+                return
+            }
+
+            alert("Sucesso")
+            gebi("meuForm").submit()
+        }
+            
     </script>
 </head>
 
 <body>
     <center>
         <h1>Validar</h1>
-        <form>
+        <form id="meuForm" action="http://jkorpela.fi/cgi-bin/echo.cgi">
             <fieldset align="center" style="width:270px"> 
                 <legend>Login:</legend>
-                Email: <input id="idEmail" type="text" onblur="maiuscula();"><br>
-                Senha: <input id="idSenha" type="password"><br> 
-                <input type="button" value="Enviar" onclick="validar();"> 
+                Email: <input id="idEmail"  name="email" type="text"
+                  onblur="maiuscula();"><br>
+                Senha: <input id="idSenha" name="senha" type="password"><br>
+                <input type="button" value="Enviar" onclick="validar()">    
             </fieldset> 
         </form> 
     </center> 
