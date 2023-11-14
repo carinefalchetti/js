@@ -23,7 +23,7 @@
         &subject=Assunto do email
         &cc=copia@provedor.com.br
         &bcc=copiaoculta@provedor.com.br
-        &body=Olá gaelra">Enviar email
+        &body=Olá gaelra"> <br>Enviar email
     </a><br>
 
     <a href="https://wa.me/5548999999999?
@@ -33,13 +33,36 @@
     <form id="idForm" onsubmit="return validarEmail()"
         action="https://app.headlessforms.cloud/api/v1/form-submission/UF7YAmmfN8" method="POST">
 
-        Email:
+        <br>Email: <br>
         <input placeholder="nada@nada.com" title="Um email válido" type="email" name="email" id="idEmail" required><br>
+        <textarea name="corpo" cols="25" rows="3" placeholder="O texto do seu Email"></textarea> <br>
 
-        Nome:
+        Nome: <br>
         <input type="text" maxlength="12" pattern="[a-z]{5,12}" name="nome" id="idNome" required><br>
-        <textarea name="corpo" cols="25" rows="3" placeholder="O texto do seu Email"></textarea>
-        <input type="submit" value="Enviar" />
+
+
+        <br>CPF:<br>
+        <input type="text" required pattern="^\d{3}\.?\d{3}\.?\d{3}-?\d{2}" id="idCPF" placeholder="000.000.000-00"
+            title="Digite o cpf corretamente" /><br>
+
+        <br>CEP:<br>
+        <input type="text" required pattern="\d{5}-?\d{3}" id="idCEP" placeholder="00000-000"
+            title="Digite o CEP corretamente" /><br>
+
+        <br>Número de telefone<br>
+        <input type="text" required pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-?([0-9]{4})" id="idTELEFONE"
+            placeholder="(00) 0000-0000" title="Digite o número de telefone corretamente" /><br>
+
+        <br>Data<br>
+        <input type="date" required pattern="\d{2}/\d{2}/\d{4}" id="idDATA" placeholder="00/00/0000"
+            title="Digite a data corretamente" /><br>
+
+        <br>Hora<br>
+        <input type="time" required pattern="\d{2}:\d{2}" id="idDATA" placeholder="00/00/0000"
+            title="Digite a hora corretamente" /><br>
+
+
+        <br><input type="submit" value="Enviar" /><br>
     </form>
 
 </body>
