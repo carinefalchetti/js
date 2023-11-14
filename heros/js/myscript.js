@@ -4,7 +4,7 @@ function mudarFrase() {
     elemento.style.color = "red";
     elemento.style.fontSize = "25px";
     elemento.style.backgroundColor = "yellow";
-    document.body.style.backgroundColor = "blue";
+    document.body.style.backgroundColor = "white";
     elemento.innerHTML = "<img src=\'img/gatos.jpg\' />"
 }
 function trocarTexto(){

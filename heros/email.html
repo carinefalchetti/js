@@ -1,7 +1,21 @@
 <!DOCTYPE html>
+
 <head>
     <title>Email</title>
+    <script>
+        //chamar no evento onsubmit do form
+        function validarEmail() {
+            var email = document.getElementById("idEmail").value
+            if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+                alert("Email inválido")
+                return false
+            } else {
+                return true
+            }
+        }
+    </script>
 </head>
+
 <body>
 
     Está com dúvidas?
@@ -9,21 +23,25 @@
         &subject=Assunto do email
         &cc=copia@provedor.com.br
         &bcc=copiaoculta@provedor.com.br
-        &body=Olá gaelra">Enviar Email
-    </a>
+        &body=Olá gaelra">Enviar email
+    </a><br>
 
     <a href="https://wa.me/5548999999999?
         text=mensagem%20de%20hoje">Enviar WhatsApp
     </a>
-    
-    <form id="idForm" action="https://jkorpela.fi/cgibin/echo.cgi" method="POST">
-        Email:<input
-        placeholder="nada@nada.com"
-        title="Um email válido" 
-        type="email"name="email"
-        id="idEmail"required>
-        <input type="submit"value="Enviar"/>
+
+    <form id="idForm" onsubmit="return validarEmail()"
+        action="https://app.headlessforms.cloud/api/v1/form-submission/UF7YAmmfN8" method="POST">
+
+        Email:
+        <input placeholder="nada@nada.com" title="Um email válido" type="email" name="email" id="idEmail" required><br>
+
+        Nome:
+        <input type="text" maxlength="12" pattern="[a-z]{5,12}" name="nome" id="idNome" required><br>
+        <textarea name="corpo" cols="25" rows="3" placeholder="O texto do seu Email"></textarea>
+        <input type="submit" value="Enviar" />
     </form>
 
 </body>
+
 </html>
