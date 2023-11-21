@@ -1,18 +1,30 @@
 <!DOCTYPE html>
+
 <head>
     <title>Repete</title>
 
     <script>
-        function contar(){
-            for (var i = 0; i < 30; i=i+3) {
-                document.write(i + "<br>")
+        function contar() {
+
+            var cars = ["fusca", "gol", "chevete"];
+            document.write (cars + "<br>")
+            var novoCarro = prompt("Diga um Carro")
+            cars.push(novoCarro)
+            document.write(cars)
+
+            for (let index = 0; index < cars.length; index++) {
+                const car = cars[index];
+                document.write(car + "<br>")
             }
-            
+
+
         }
     </script>
 
 </head>
-<body>  
+
+<body>
     <input type="button" value="Enviar" onclick="contar()">
 </body>
+
 </html>
